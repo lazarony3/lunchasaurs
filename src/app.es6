@@ -5,9 +5,11 @@ import { createStore } from 'redux'
 
 var Home = React.createClass({
     render: function() {
-        return (<div>
-                <p>Welcome to the Lunchasaurs...</p>
-              </div>);
+        return (
+          <div>
+            <p>Welcome to the Lunchasaurs...</p>
+          </div>
+        );
     }
 });
 
