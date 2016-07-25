@@ -6,9 +6,7 @@ export default class MainLayout extends React.Component {
   render() {
     return (
         <div>
-          <span>
-          </span>
-
+        <Link to="/CreateAccount">Create Account</Link>
           <hr/>
           <div>
             {this.props.children}
