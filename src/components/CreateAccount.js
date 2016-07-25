@@ -12,7 +12,7 @@ export default class CreateAccount extends React.Component {
                     Password: <input type="password" id="password" />
                     <button onClick={self.handleClick}>Create</button>
                 </div>
-            )
+            );
         };
         
         handleClick (e) {
@@ -24,12 +24,12 @@ export default class CreateAccount extends React.Component {
             newUser.password = $('#password').val();
             
             this.addUserToStorage(newUser);
-        }
+        };
         
         addUserToStorage (user) {
             var users = JSON.stringify(localStorage.getItem('users')) || [];
             
             users.push(user);
             localStorage.setItem('users', JSON.stringify(users));
-        }
+        };
 }
