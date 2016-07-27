@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 .mm-popup {
   position: absolute;
 }
@@ -13,7 +14,16 @@
 }
 body {
   background-color: #00e68a;
+  margin: 0 auto;
+  max-width: 900px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  line-height: 1.5;
+  padding: 4em 1em;
+  color: #555;
 }
 body #app {
   position: relative;
+}
+body a {
+  color: #e81c4f;
 }
