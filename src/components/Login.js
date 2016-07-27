@@ -10,7 +10,7 @@ export default class Login extends React.Component {
      this.render = this.render.bind(this);
      this.handleUsernameChange = this.handleUsernameChange.bind(this);
      this.handlePasswordChange = this.handlePasswordChange.bind(this);
-     this.createUser = this.createUser.bind(this);
+     this.logUserIn = this.logUserIn.bind(this);
     }
     handleUsernameChange (event) {
       this.setState({
@@ -22,12 +22,13 @@ export default class Login extends React.Component {
         password: event.target.value
       });
     }
-    createUser (event) {
+    logUserIn (event) {
       event.preventDefault();
-      this.props.actions.addUser({
-        name: this.state.name,
-        email: this.state.email
-      });
+
+      // this.props.actions.addUser({
+      //   name: this.state.name,
+      //   email: this.state.email
+      // });
     }
   render() {
     return (
@@ -35,7 +36,7 @@ export default class Login extends React.Component {
         <label htmlFor="name">Username: </label>
         <input id="username" type="text" value={this.state.username} onChange={this.handleUsernameChange}/>
         <label htmlFor="email">Password: </label>
-        <input id="password" type="text" value={this.state.password} onChange={this.handlePasswordChange}/>
+        <input id="password" type="password" value={this.state.password} onChange={this.handlePasswordChange}/>
         <input type="submit" value="Login" />
       </form>
     );
