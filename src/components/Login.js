@@ -23,12 +23,19 @@ export default class Login extends React.Component {
       });
     }
     logUserIn (event) {
+      var self = this, loggedIn = false;
       event.preventDefault();
+      var users = JSON.parse(localStorage.getItem('users')) || [];
 
-      // this.props.actions.addUser({
-      //   name: this.state.name,
-      //   email: this.state.email
-      // });
+      users.forEach(function(user) {
+        if (user.name === self.state.username && user.password === self.state.password ) {
+          alert("Logging in.");
+          loggedIn = true;
+        }
+      });
+      if (!loggedIn) {
+        alert("Failed Login");
+      }
     }
   render() {
     return (
