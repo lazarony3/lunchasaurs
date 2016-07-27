@@ -1,0 +1,19 @@
+.mm-popup {
+  position: absolute;
+}
+.mm-popup.mm-popup--visible {
+  border: #00995c 2px solid;
+  border-radius: 10px;
+  background-color: #b3ffe0;
+  left: 50%;
+  top: 50%;
+  min-width: 100px;
+  min-height: 100px;
+  padding: 15px;
+}
+body {
+  background-color: #00e68a;
+}
+body #app {
+  position: relative;
+}

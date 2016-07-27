@@ -10,17 +10,26 @@ export default class Header extends React.Component {
     this.launchLoginDialog = this.launchLoginDialog.bind(this);
   }
   launchLoginDialog() {
-    Popup.alert("Holy shit");
+    Popup.create({
+      title: "Login",
+      content: '<LoginPopup></LoginPopup>',
+      buttons: {
+          left: [{}, ...],
+          right: [{}, ...]
+      },
+      className: null, // or string
+      noOverlay: true, // hide overlay layer (default is false, overlay visible)
+      position: {x: 0, y: 0} // or a function, more on this further down
+    });
   }
   render() {
-    ReactDOM.render(
+    return (
       <span>
         <Popup />
         <Link to="/">Home</Link> |
-        <Link to="/CreateAccount"> Create Account</Link>
+        <Link to="/CreateAccount"> Create Account</Link> |
         <button onClick={this.launchLoginDialog}>Login</button>
       </span>
-      , document.getElementById('popupContainer')
     );
   }
 }
