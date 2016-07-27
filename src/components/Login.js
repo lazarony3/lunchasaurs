@@ -24,7 +24,7 @@ export default class Login extends React.Component {
     }
     logUserIn (event) {
       event.preventDefault();
-
+      alert("Login");
       // this.props.actions.addUser({
       //   name: this.state.name,
       //   email: this.state.email
