@@ -2,7 +2,7 @@ import React from 'react'
 
 
 export default class CreateAccount extends React.Component {
-    
+
     constructor (props) {
         super(props);
         this.state = {
@@ -15,7 +15,7 @@ export default class CreateAccount extends React.Component {
         this.handleClick = this.handleClick.bind(this);
         this.addUserToStorage = this.addUserToStorage.bind(this);
     }
-    
+
     render() {
         return (
             <div>
@@ -26,27 +26,26 @@ export default class CreateAccount extends React.Component {
             </div>
         );
     };
-    
+
     handleInputChange(event) {
         var newState = {};
-        
+
         newState[event.target.id] = event.target.value;
         this.setState(newState);
     }
-    
+
     handleClick () {
         var user = {
             name: this.state.name,
             email: this.state.email,
             password: this.state.password
         };
-        
+
         this.addUserToStorage(user);
     };
-    
+
     addUserToStorage (user) {
         var users = localStorage.getItem('users') || [];
-        
         users.push(user);
         localStorage.setItem('users', JSON.stringify(users));
     };
