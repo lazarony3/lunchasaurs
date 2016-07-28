@@ -7,6 +7,7 @@ export default class CreateAccount extends React.Component {
         super(props);
         this.state = {
             name: '',
+            username: '',
             email: '',
             password: ''
         };
@@ -19,10 +20,11 @@ export default class CreateAccount extends React.Component {
     render() {
         return (
             <div>
-                Name: <input type="text" id="name" onChange={this.handleInputChange} value={this.state.name} placeholder="name (required)"/>
+                First Name: <input type="text" id="name" onChange={this.handleInputChange} value={this.state.name} placeholder="name (required)"/>
+                Username: <input type="text" id="username" onChange={this.handleInputChange} value={this.state.username} placeholder="username (required)" />
                 Email: <input type="email" id="email" onChange={this.handleInputChange} value={this.state.email} placeholder="email (required)"/>
                 Password: <input type="password" id="password" onChange={this.handleInputChange} value={this.state.password} placeholder="*********"/>
-                <button onClick={this.handleClick} disabled={!this.state.name || !this.state.email || !this.state.password}>Create</button>
+                <button onClick={this.handleClick} disabled={!this.state.name ||!this.state.username || !this.state.email || !this.state.password}>Create</button>
             </div>
         );
     };
@@ -38,14 +40,19 @@ export default class CreateAccount extends React.Component {
         var user = {
             name: this.state.name,
             email: this.state.email,
-            password: this.state.password
+            password: this.state.password,
+            username: this.state.username
         };
 
         this.addUserToStorage(user);
     };
 
     addUserToStorage (user) {
-        var users = localStorage.getItem('users') || [];
+        var users = localStorage.getItem('users') || [],
+            userId = users.length;
+            
+        user.userId = userId;
+        
         users.push(user);
         localStorage.setItem('users', JSON.stringify(users));
     };
