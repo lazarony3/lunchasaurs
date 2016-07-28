@@ -14,7 +14,6 @@ export default class CreateAccount extends React.Component {
         this.render = this.render.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
-        this.addUserToStorage = this.addUserToStorage.bind(this);
     }
 
     render() {
@@ -44,16 +43,10 @@ export default class CreateAccount extends React.Component {
             username: this.state.username
         };
 
-        this.addUserToStorage(user);
+        if(this.props.handle) {
+            this.props.handle(user);
+        }
     };
 
-    addUserToStorage (user) {
-        var users = localStorage.getItem('users') || [],
-            userId = users.length;
-            
-        user.userId = userId;
-        
-        users.push(user);
-        localStorage.setItem('users', JSON.stringify(users));
-    };
+    
 }
