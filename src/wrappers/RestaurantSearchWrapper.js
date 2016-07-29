@@ -1,4 +1,6 @@
 import React from 'react'
+import RestaurantDisplay from '../components/RestaurantDisplay.js'
+import YelpData from '../yelpData.js'
 
 export default class RestaurantSearchWrapper extends React.Component {
     constructor(props) {
@@ -11,7 +13,7 @@ export default class RestaurantSearchWrapper extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <RestaurantDisplay searchForRestaurants={this.searchForRestaurants}></RestaurantDisplay>
         )
     }
 
@@ -49,5 +51,7 @@ export default class RestaurantSearchWrapper extends React.Component {
         //     console.log(data);
         //   }
         // );
+        var yelpDataObj = new YelpData();
+        return yelpDataObj.data;
     };
 }
