@@ -7,6 +7,13 @@ export default class Header extends React.Component {
     super(props);
     this.render = this.render.bind(this);
   }
+  
+  componentDidMount () {
+      window.ee.addListener('loggedIn', function () {
+          console.log('logged in');
+      })
+  }
+  
   render() {
     return (
       <div class="header">

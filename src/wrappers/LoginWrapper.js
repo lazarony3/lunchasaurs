@@ -2,6 +2,10 @@ import React from 'react'
 import Login from '../components/Login'
 
 export default class LoginWrapper extends React.Component {
+    constructor (props) {
+        super(props);
+    }
+
     render() {
         return (
             <div className="login-wrapper">
@@ -19,6 +23,7 @@ export default class LoginWrapper extends React.Component {
           if (user.username === data.username && user.password === data.password ) {
             loggedIn = true;
             sessionStorage.setItem('user', JSON.stringify(user));
+            window.ee.emitEvent('loggedIn');
           }
         });
         if (!loggedIn) {
