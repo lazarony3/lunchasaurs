@@ -12,11 +12,10 @@ export default class RestaurantDisplay extends React.Component {
   render() {
     return (
       <ul>
-
+        {this.state.restaurants.businesses.map(function(business, index){
+          return <li key={ index }>{business.name}</li>;
+        })}
       </ul>
     );
-    // {this.state.restaurants.businesses.map(function(name, index){
-    //             return <li key={ index }>{name}</li>;
-    //           })}
   }
 }
