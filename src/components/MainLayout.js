@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router'
 import Header from './Header.js'
+import RestaurantSearchWrapper from '../wrappers/RestaurantSearchWrapper.js'
 
 export default class MainLayout extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ export default class MainLayout extends React.Component {
           <hr/>
           <div>
             {this.props.children}
+            <RestaurantSearchWrapper></RestaurantSearchWrapper>
           </div>
 
           <div>
