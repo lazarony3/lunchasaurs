@@ -15,7 +15,6 @@ export default class MainLayout extends React.Component {
           <hr/>
           <div>
             {this.props.children}
-            <RestaurantSearchWrapper></RestaurantSearchWrapper>
           </div>
 
           <div>
