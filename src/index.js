@@ -10,6 +10,8 @@ import LoginWrapper from './wrappers/LoginWrapper';
 import RestaurantSearchWrapper from './wrappers/RestaurantSearchWrapper';
 import Home from './components/Home'
 import UserLayout from './components/UserLayout'
+import About from './components/About'
+import ContactUs from './components/ContactUs'
 
 
 render(
@@ -21,7 +23,10 @@ render(
         <IndexRoute component={Home}/>
         <Route path="/account/create" component={CreateAccountWrapper} />
         <Route path="/account/login" component={LoginWrapper} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={ContactUs} />
         <Route path="*" component={NoMatch} />
+        
     </Route>
 </Router>
 , document.getElementById('app')

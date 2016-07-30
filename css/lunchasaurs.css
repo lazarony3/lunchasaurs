@@ -13,6 +13,9 @@ body #app {
 body a {
   color: #e81c4f;
 }
+body a.active {
+  color: #4ae621;
+}
 body .content-wrap {
   min-height: 598px;
   min-width: 900px;
@@ -50,4 +53,7 @@ body .home-container .cta-card {
   margin: auto;
   text-decoration: none;
   color: #555;
+}
+body .footer {
+  float: right;
 }

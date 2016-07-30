@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router'
 import Header from './Header.js'
 import RestaurantSearchWrapper from '../wrappers/RestaurantSearchWrapper.js'
+import Footer from './Footer'
 
 export default class MainLayout extends React.Component {
   constructor(props) {
@@ -20,6 +21,8 @@ export default class MainLayout extends React.Component {
           </div>
           <div>
           </div>
+          <hr/>
+          <Footer/>
         </div>
       );
   }
