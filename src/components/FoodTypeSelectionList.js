@@ -1,26 +1,30 @@
 import React from 'react'
 import {Link} from 'react-router'
-import Header from './Header.js'
+import FoodTypeSelectionItem from './FoodTypeSelectionItem.js'
 
 export default class FoodTypeSelectionList extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      preferences: props.user.preferences.foodCategories
+    };
     this.render = this.render.bind(this);
   }
   render() {
+    let style = {
+      'backgroundColor': '#00e68a',
+      'maxHeight': '500px',
+      'overflowX': 'auto'
+    };
     return (
-        <div>
-          <Header loggedIn={true}></Header>
-          <hr/>
-          <div>Welcome to your account</div>
-          <div className="content-wrap">
-            <div className="content-container">
-                {this.props.children}
-            </div>
-          </div>
-          <div>
-          </div>
-        </div>
+      <div style={style}>
+        <ul>
+          {this.state.preferences.map(function(foodItemPreference, index){
+            return <FoodTypeSelectionItem foodItemPreference={foodItemPreference} index={index} ></FoodTypeSelectionItem>;
+          })}
+        </ul>
+      </div>
       );
   }
 }

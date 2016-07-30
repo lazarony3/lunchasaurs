@@ -8,7 +8,8 @@ export default class CreateAccount extends React.Component {
             name: '',
             username: '',
             email: '',
-            password: ''
+            password: '',
+            foodPreferences: []
         };
         this.render = this.render.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -47,5 +48,5 @@ export default class CreateAccount extends React.Component {
         }
     };
 
-    
+
 }
