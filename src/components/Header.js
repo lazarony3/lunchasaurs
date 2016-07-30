@@ -41,7 +41,8 @@ export default class Header extends React.Component {
 
   logoff (e) {
       e.preventDefault()
+      
+      sessionStorage.removeItem('user');
       browserHistory.push('/');
-      window.ee.emitEvent('logoff');
   }
 }

@@ -6,10 +6,6 @@ export default class LoginWrapper extends React.Component {
     constructor (props) {
         super(props);
     }
-    
-    componentDidMount() {
-        ee.addListener('logoff', this.logoff);
-    }
 
     render() {
         return (
@@ -35,8 +31,4 @@ export default class LoginWrapper extends React.Component {
           alert("Failed Login");
         }
     };
-    
-    logoff () {
-        sessionStorage.removeItem('user');
-    }
 }
