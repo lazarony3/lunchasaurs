@@ -13,10 +13,11 @@ export default class MainLayout extends React.Component {
         <div>
           <Header></Header>
           <hr/>
-          <div>
-            {this.props.children}
+          <div className="content-wrap">
+            <div className="content-container">
+                {this.props.children}
+            </div>
           </div>
-
           <div>
           </div>
         </div>

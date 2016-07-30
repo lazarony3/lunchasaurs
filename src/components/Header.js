@@ -25,8 +25,8 @@ export default class Header extends React.Component {
   render() {
       var loginLink, accountLink, restaurantsLink;
 
-      loginLink = <Link to="/Login"> Login</Link>;
-      accountLink = <Link to="/CreateAccount"> Create Account</Link>;
+      loginLink = <Link to="/account/login"> Login</Link>;
+      accountLink = <Link to="/account/create"> Create Account</Link>;
       restaurantsLink = '';
 
       if (this.state.loggedIn) {

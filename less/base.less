@@ -2,7 +2,6 @@
 @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
 
 body {
-  background-color: @backgroundColor;
   margin: 0 auto;
   max-width: 900px;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -17,4 +16,48 @@ body {
   a {
       color: #e81c4f;
     }
+    //main layout styles
+    .content-wrap {
+        min-height: 598px;
+        min-width: 900px;
+        position: relative;
+        &:after{
+            content: ' ';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width:100%;
+            height:100%;
+            background-image: url(../images/splash.jpg);
+            opacity: .8;
+            z-index: -1
+        }
+        
+        .content-container {
+            margin: 0 auto;
+            width: 700px;
+            height: 598px;
+        }
+        
+    }
+    //home page styles
+    .home-container {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        top: 15%;
+        
+        .cta-card {
+            width: 35%;
+            padding: 40px;
+            background-color: #bef1dc;
+            opacity: .9;
+            text-align: center;
+            margin: auto;
+            text-decoration: none;
+            color: #555;
+        }
+    }
+
 }
