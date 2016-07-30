@@ -1,3 +1,5 @@
+window.ee = new EventEmitter();
+
 import React from 'react';
 import {render} from 'react-dom';
 import { Router, Route, Link, browserHistory, RouteHandler, IndexRoute } from 'react-router'
@@ -20,7 +22,7 @@ render(
         <Route path="/account/users/:userId" component={UserLayout}>
         <Route path="*" component={NoMatch} />
     </Route>
-  
+
     </Route>
 </Router>
 , document.getElementById('app')

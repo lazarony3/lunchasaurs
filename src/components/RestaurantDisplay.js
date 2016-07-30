@@ -13,7 +13,7 @@ export default class RestaurantDisplay extends React.Component {
     return (
       <ul>
         {this.state.restaurants.businesses.map(function(business, index){
-          return <li key={ index }>{business.name}</li>;
+          return <li key={ index }>{business.name}<br/><img src={business.image_url} /></li>;
         })}
       </ul>
     );
