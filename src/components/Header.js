@@ -12,16 +12,6 @@ export default class Header extends React.Component {
     this.logoff = this.logoff.bind(this);
   }
 
-  componentDidMount () {
-      var self = this;
-      window.ee.addListener('loggedIn', function () {
-          console.log('logged in');
-          self.setState({
-              loggedIn: true
-          });
-      })
-  }
-
   render() {
       var loginLink, accountLink, restaurantsLink;
 
@@ -29,9 +19,9 @@ export default class Header extends React.Component {
       accountLink = <Link to="/account/create"> Create Account</Link>;
       restaurantsLink = '';
 
-      if (this.state.loggedIn) {
+      if (this.props.id) {
           loginLink = <a href="#" onClick={this.logoff}>Logoff</a>
-          accountLink = <Link to="/MyAccount">My Account</Link>
+          accountLink = <Link to="/account/users/${this.props.id}">My Account</Link>
           restaurantsLink = <Link to="/Restaurants">Recommendations</Link>
       }
 
@@ -49,8 +39,7 @@ export default class Header extends React.Component {
 
   logoff (e) {
       e.preventDefault()
-      this.setState({
-          loggedIn: false
-      });
+      browserHistory.push('/');
+      window.ee.emitEvent('logoff');
   }
 }

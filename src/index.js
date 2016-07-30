@@ -18,11 +18,11 @@ render(
         <IndexRoute component={Home}/>
         <Route path="/account/create" component={CreateAccountWrapper} />
         <Route path="/account/login" component={LoginWrapper} />
-        <Route path="/Restaurants" component={RestaurantSearchWrapper} />
-        <Route path="/account/users/:userId" component={UserLayout}>
-        <Route path="*" component={NoMatch} />
+        // <Route path="/Restaurants" component={RestaurantSearchWrapper} />
+        // <Route path="*" component={NoMatch} />
     </Route>
-
+    <Route path="/user/:userId" component={UserLayout}>
+        <Route path="/user/:userId/estaurants" component={RestaurantSearchWrapper}/>
     </Route>
 </Router>
 , document.getElementById('app')

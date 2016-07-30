@@ -11,7 +11,7 @@ export default class MainLayout extends React.Component {
   render() {
     return (
         <div>
-          <Header></Header>
+          <Header id={this.props.params.userId}></Header>
           <hr/>
           <div className="content-wrap">
             <div className="content-container">

@@ -6,6 +6,10 @@ export default class LoginWrapper extends React.Component {
     constructor (props) {
         super(props);
     }
+    
+    componentDidMount() {
+        ee.addListener('logoff', this.logoff);
+    }
 
     render() {
         return (
@@ -22,9 +26,9 @@ export default class LoginWrapper extends React.Component {
 
         users.forEach(function(user) {
           if (user.username === data.username && user.password === data.password ) {            
-            loggedIn = true;
+            // loggedIn = true;
             sessionStorage.setItem('user', JSON.stringify(user));
-            window.ee.emitEvent('loggedIn');
+            
             browserHistory.push('/account/users/' + user.userId);
           }
         });
@@ -32,4 +36,8 @@ export default class LoginWrapper extends React.Component {
           alert("Failed Login");
         }
     };
+    
+    logoff () {
+        sessionStorage.removeItem('user');
+    }
 }
