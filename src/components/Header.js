@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from 'react-router';
+import {Link, browserHistory} from 'react-router';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -13,22 +13,24 @@ export default class Header extends React.Component {
   }
 
   render() {
-      var loginLink, accountLink, restaurantsLink;
+      var loginLink, accountLink, restaurantsLink, homeLink;
 
+      homeLink = <Link to="/">Home</Link>
       loginLink = <Link to="/account/login"> Login</Link>;
       accountLink = <Link to="/account/create"> Create Account</Link>;
       restaurantsLink = '';
 
-      if (this.props.id) {
+      if (this.props.loggedIn) {
+          homeLink = ''
           loginLink = <a href="#" onClick={this.logoff}>Logoff</a>
-          accountLink = <Link to="/account/users/${this.props.id}">My Account</Link>
-          restaurantsLink = <Link to="/Restaurants">Recommendations</Link>
+          accountLink = <Link to={'/user/' + JSON.parse(sessionStorage.getItem('user')).userId}>My Account</Link>
+          restaurantsLink = <Link to="/restaurants">Recommendations</Link>
       }
 
     return (
       <div class="header">
-
-        <Link to="/">Home</Link> |
+        {homeLink}
+        {homeLink ? ' | ': ''}
         {accountLink} |
         {loginLink}
         {restaurantsLink ? ' | ' : ''}

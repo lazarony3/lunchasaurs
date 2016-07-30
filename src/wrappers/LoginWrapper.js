@@ -25,11 +25,10 @@ export default class LoginWrapper extends React.Component {
         var users = JSON.parse(localStorage.getItem('users')) || [];
 
         users.forEach(function(user) {
-          if (user.username === data.username && user.password === data.password ) {            
-            // loggedIn = true;
+          if (user.username === data.username && user.password === data.password ) {  
+            loggedIn = true;          
             sessionStorage.setItem('user', JSON.stringify(user));
-            
-            browserHistory.push('/account/users/' + user.userId);
+            browserHistory.push('/user/' + user.userId);
           }
         });
         if (!loggedIn) {

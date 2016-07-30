@@ -10,18 +10,19 @@ export default class Users extends React.Component {
   }
   render() {
     return (
-        // <div>
-        //   <Header loggedIn={true}></Header>
-        //   <hr/>
-        //   <div className="content-wrap">
-        //     <div className="content-container">
-        //         {this.props.children}
-        //     </div>
-        //   </div>
-        //   <div>
-        //   </div>
-        // </div>
-        <div>Welcome to your account</div>
+        <div>
+          <Header loggedIn={true}></Header>
+          <hr/>
+          <div>Welcome to your account</div>
+          <div className="content-wrap">
+            <div className="content-container">
+                {this.props.children}
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+        
       );
   }
 }

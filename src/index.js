@@ -14,15 +14,14 @@ import UserLayout from './components/UserLayout'
 
 render(
   <Router history={browserHistory}>
+    <Route path="/user/:userId" component={UserLayout}>
+        <Route path="/restaurants" component={RestaurantSearchWrapper}/>
+    </Route>
     <Route path="/" component={MainLayout}>
         <IndexRoute component={Home}/>
         <Route path="/account/create" component={CreateAccountWrapper} />
         <Route path="/account/login" component={LoginWrapper} />
-        // <Route path="/Restaurants" component={RestaurantSearchWrapper} />
-        // <Route path="*" component={NoMatch} />
-    </Route>
-    <Route path="/user/:userId" component={UserLayout}>
-        <Route path="/user/:userId/estaurants" component={RestaurantSearchWrapper}/>
+        <Route path="*" component={NoMatch} />
     </Route>
 </Router>
 , document.getElementById('app')
