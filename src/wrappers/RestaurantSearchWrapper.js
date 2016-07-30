@@ -1,6 +1,7 @@
 import React from 'react'
 import RestaurantDisplay from '../components/RestaurantDisplay.js'
 import YelpData from '../yelpData.js'
+// var Oauth = require('oauth')
 
 export default class RestaurantSearchWrapper extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ export default class RestaurantSearchWrapper extends React.Component {
           consumerSecret:	'hs2MRu_muu0azvrrMDQzRYOkEgM',
           token:	'hfUVaPMokexYPCAaant7WgNha-CiS5rQ',
           tokenSecret:	's-MLxiwHm89KZbV2B630TQ8Jr9w'
-        }
+        };
 
         // var oauth = new OAuth.OAuth(
         //   'https://api.twitter.com/oauth/request_token',
