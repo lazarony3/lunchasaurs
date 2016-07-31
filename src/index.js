@@ -12,11 +12,13 @@ import Home from './components/Home'
 import UserLayout from './components/UserLayout'
 import About from './components/About'
 import ContactUs from './components/ContactUs'
+import UserAccount from './components/UserAccount'
 
 
 render(
   <Router history={browserHistory}>
     <Route path="/user/:userId" component={UserLayout}>
+        <IndexRoute component={UserAccount}/>
         <Route path="/restaurants" component={RestaurantSearchWrapper}/>
     </Route>
     <Route path="/" component={MainLayout}>
@@ -26,7 +28,7 @@ render(
         <Route path="/about" component={About} />
         <Route path="/contact" component={ContactUs} />
         <Route path="*" component={NoMatch} />
-        
+
     </Route>
 </Router>
 , document.getElementById('app')
