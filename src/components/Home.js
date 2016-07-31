@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router'
+import CtaCard from './CtaCard'
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -9,19 +9,10 @@ export default class Home extends React.Component {
   render() {
     return (
         <div className="home-container">
-            <Link to="/account/create" className="cta-card">
-                <div>
-                    <h2>Sign up for Lunchasaurs!</h2>
-                    <div>Create an account today..</div>
-                </div>
-            </Link>
-            
-            <Link to="/account/login" className="cta-card">
-                <div>
-                    <h2>Already have an account?</h2>
-                    <div>Login now!</div>
-                </div>
-            </Link>
+            <CtaCard to="/account/create" heading={'Sign up for Lunchasaurs!'}
+            message={'Create an account today...'}/>
+            <CtaCard to="/account/login" heading={'Already have an account?'}
+            message={'Login now!'}/>
         </div>
       );
   }
