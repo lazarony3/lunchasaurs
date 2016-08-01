@@ -13,10 +13,23 @@ export default class Cuisines extends React.Component {
     this.render = this.render.bind(this);
   }
   render() {
+      var self = this;
+      let style = {
+        'backgroundColor': '#00e68a',
+        'maxHeight': '500px',
+        'overflowX': 'auto'
+      };
     return (
-        <div>
+        <div style={style}>
             Step three: How far would you like to go?
-            ****insert distance list here****
+            <ul>
+            {this.state.user.preferences.distances.map(function(distance, index){
+                return <li><input type="checkbox"
+                  checked={distance.selected}
+                  onClick={self.handleOnChange}/>
+                {distance.distance}</li>;
+            })}
+            </ul>
         </div>
     );
   }

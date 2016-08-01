@@ -20,7 +20,7 @@ export default class Preferences extends React.Component {
   }
   
   pickRandomRestaurant(e) {
-      var restaurants = ['Qdoba', 'City Barbeque', 'Jason\'s Deli', 'Manaas', 'Schmitd\'s'],
+      var restaurants = ['Qdoba', 'City Barbeque', 'Jason\'s Deli', 'Bibibop', 'Manaas', 'Schmitd\'s'],
         selectedIndex = Math.floor(Math.random() * restaurants.length);
         
         this.setState({

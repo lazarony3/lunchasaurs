@@ -32,7 +32,10 @@ export default class CreateAccountWrapper extends React.Component {
             title: food,
             selected: false
           };
-        })
+      }),
+        priceRanges: yelpDataObj.priceRangesList,
+        distances: yelpDataObj.distances
+     
       }
 
       users.push(user);

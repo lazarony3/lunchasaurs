@@ -108,6 +108,20 @@ export default class YelpData {
       'Vietnamese',
       'Waffles'
     ];
+    
+    this.priceRangesList = [
+         {dollarValue: '$', text: 'inexpensive', selected: false},
+         {dollarValue: '$$', text: 'moderate',selected: false},
+         {dollarValue: '$$$', text: 'pricey',selected: false},
+         {dollarValue: '$$$$', text: 'ultra high-end',selected: false}
+     ];
+     
+     this.distances = [
+         {distance: 'Within 4 blocks', selected: false},
+         {distance: 'Walking (1 mi.)', selected: false},
+         {distance: 'Biking (2 mi.)', selected: false},
+         {distance: 'Driving (5 mi.)', selected: false},
+     ]
 
     this.data = {
       "businesses": [
