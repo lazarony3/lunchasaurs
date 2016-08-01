@@ -36,7 +36,7 @@ export default class UpdateUserButton extends React.Component {
       minHeight: '30px'
     };
     return (
-      <button onClick={this.handleClick()} style={style}>Save Changes</button>
+      <button onClick={this.handleClick} style={style}>Save Changes</button>
     );
   }
 }

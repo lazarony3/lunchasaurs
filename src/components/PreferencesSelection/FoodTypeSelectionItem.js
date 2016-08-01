@@ -18,7 +18,7 @@ export default class FoodTypeSelectionItem extends React.Component {
           selected: event.target.checked
         }
       };
-
+      this.props.updateItems(newState.foodItem, this.props.index);
       this.setState(newState);
   }
   render() {

@@ -18,6 +18,7 @@ export default class DistanceItem extends React.Component {
         }
       };
 
+      this.props.updateItems(newState.distance, this.props.index);
       this.setState(newState);
   }
   render() {

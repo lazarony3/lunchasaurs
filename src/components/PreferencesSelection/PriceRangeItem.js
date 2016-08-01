@@ -19,6 +19,7 @@ export default class PriceRangeItem extends React.Component {
         }
       };
 
+      this.props.updateItems(newState.price, this.props.index);
       this.setState(newState);
   }
   render() {
