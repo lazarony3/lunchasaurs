@@ -7,7 +7,6 @@ export default class RestaurantDisplay extends React.Component {
      this.state = {
        restaurants: this.props.searchForRestaurants()
      };
-     console.log(this.state);
   }
   render() {
     return (

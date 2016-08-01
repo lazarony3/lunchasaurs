@@ -26,17 +26,16 @@ export default class CreateAccountWrapper extends React.Component {
 
       user.userId = userId;
       user.preferencesSet = false;
-      user.preferences = {  
+      user.preferences = {
         foodCategories: foodCategories.map(function(food) {
           return {
             title: food,
             selected: false
           };
-      }),
+        }),
         priceRanges: yelpDataObj.priceRangesList,
         distances: yelpDataObj.distances
-     
-      }
+      };
 
       users.push(user);
       localStorage.setItem('users', JSON.stringify(users));

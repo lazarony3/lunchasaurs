@@ -8,8 +8,7 @@ export default class CreateAccount extends React.Component {
             name: '',
             username: '',
             email: '',
-            password: '',
-            foodPreferences: []
+            password: ''
         };
         this.render = this.render.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -19,7 +18,7 @@ export default class CreateAccount extends React.Component {
     render() {
         return (
             <div>
-                First Name: <input type="text" id="name" onChange={this.handleInputChange} value={this.state.name} placeholder="name (required)"/>
+                First and Last Name: <input type="text" id="name" onChange={this.handleInputChange} value={this.state.name} placeholder="name (required)"/>
                 Username: <input type="text" id="username" onChange={this.handleInputChange} value={this.state.username} placeholder="username (required)" />
                 Email: <input type="email" id="email" onChange={this.handleInputChange} value={this.state.email} placeholder="email (required)"/>
                 Password: <input type="password" id="password" onChange={this.handleInputChange} value={this.state.password} placeholder="*********"/>

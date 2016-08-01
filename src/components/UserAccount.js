@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link, browserHistory} from 'react-router'
 import Header from './Header.js'
-import FoodTypeSelectionList from './FoodTypeSelectionList.js'
 import RandomRestaurant from './RandomRestaurant'
 
 export default class UserAccount extends React.Component {
@@ -17,17 +16,17 @@ export default class UserAccount extends React.Component {
   render() {
       var preferencesText = ''
       if(!this.state.user.preferencesSet){
-        preferencesText = <span>We noticed you are new here. Please set your <a href="#" onClick={this.navigateToPrefs}>Preferences</a></span>  
+        preferencesText = <span>We noticed you are new here. Please set your <a href="#" onClick={this.navigateToPrefs}>Preferences</a></span>
       }
     return (
         <div>
-            <h2>Welcome {this.state.user.name}!</h2> 
+            <h2>Welcome {this.state.user.name}!</h2>
             <div>{preferencesText}</div>
             <RandomRestaurant/>
         </div>
     );
   }
-  
+
   navigateToPrefs (e) {
       e.preventDefault();
       this.state.user.preferencesSet = true;
