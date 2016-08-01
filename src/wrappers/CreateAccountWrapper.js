@@ -25,7 +25,8 @@ export default class CreateAccountWrapper extends React.Component {
           userId = users.length;
 
       user.userId = userId;
-      user.preferences = {
+      user.preferencesSet = false;
+      user.preferences = {  
         foodCategories: foodCategories.map(function(food) {
           return {
             title: food,

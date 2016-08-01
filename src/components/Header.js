@@ -14,28 +14,30 @@ export default class Header extends React.Component {
   }
 
   render() {
-      var loginLink, accountLink, restaurantsLink, homeLink;
+      var loginLink, accountLink, restaurantsLink, homeLink, prefsLink;
 
-      homeLink = <Link to="/">Home</Link>
+      homeLink =<span><Link to="/">Home</Link> | </span>
       loginLink = <NavLink to="/account/login"> Login</NavLink>;
       accountLink = <NavLink to="/account/create"> Create Account</NavLink>;
       restaurantsLink = '';
+      prefsLink = '';
 
       if (this.props.loggedIn) {
           homeLink = ''
           loginLink = <a href="#" onClick={this.logoff}>Logoff</a>
           accountLink = <NavLink to={'/user/' + JSON.parse(sessionStorage.getItem('user')).userId}>My Account</NavLink>
-          restaurantsLink = <NavLink to="/restaurants">Recommendations</NavLink>
+          restaurantsLink = <span><NavLink to="/restaurants">Recommendations</NavLink> | </span>
+          prefsLink = <NavLink to="/preferences">Preferences</NavLink>
       }
 
     return (
       <div className="header">
         {homeLink}
-        {homeLink ? ' | ': ''}
         {accountLink} |
         {loginLink}
         {restaurantsLink ? ' | ' : ''}
         {restaurantsLink}
+        {prefsLink}
       </div>
     );
   }

@@ -13,12 +13,21 @@ import UserLayout from './components/UserLayout'
 import About from './components/About'
 import ContactUs from './components/ContactUs'
 import UserAccount from './components/UserAccount'
+import Preferences from './components/Preferences'
+import Cuisines from './components/Cuisines'
+import Priceranges from './components/Priceranges'
+import Distances from './components/Distances'
 
 
 render(
   <Router history={browserHistory}>
     <Route path="/user/:userId" component={UserLayout}>
         <IndexRoute component={UserAccount}/>
+        <Route path="/preferences" component={Preferences}>
+            <Route path="/preferences/cuisine" component={Cuisines}/>
+            <Route path="/preferences/pricerange" component={Priceranges}/>
+            <Route path="/preferences/distance" component={Distances}/>
+        </Route>
         <Route path="/restaurants" component={RestaurantSearchWrapper}/>
     </Route>
     <Route path="/" component={MainLayout}>
