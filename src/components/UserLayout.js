@@ -12,13 +12,13 @@ export default class Users extends React.Component {
         <div>
           <Header loggedIn={true}></Header>
           <hr/>
+
           <div className="content-wrap">
             <div className="content-container">
                 {this.props.children}
             </div>
           </div>
-          <div>
-          </div>
+
           <Footer></Footer>
         </div>
 

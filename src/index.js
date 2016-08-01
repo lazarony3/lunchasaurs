@@ -15,8 +15,8 @@ import ContactUs from './components/ContactUs'
 import UserAccount from './components/UserAccount'
 import Preferences from './components/Preferences'
 import Cuisines from './components/Cuisines'
-import Priceranges from './components/Priceranges'
-import Distances from './components/Distances'
+import PriceRanges from './components/PreferencesSelection/PriceRanges'
+import Distances from './components/PreferencesSelection/Distances'
 
 
 render(
@@ -25,7 +25,7 @@ render(
         <IndexRoute component={UserAccount}/>
         <Route path="/preferences" component={Preferences}>
             <Route path="/preferences/cuisine" component={Cuisines}/>
-            <Route path="/preferences/pricerange" component={Priceranges}/>
+            <Route path="/preferences/pricerange" component={PriceRanges}/>
             <Route path="/preferences/distance" component={Distances}/>
         </Route>
         <Route path="/restaurants" component={RestaurantSearchWrapper}/>
