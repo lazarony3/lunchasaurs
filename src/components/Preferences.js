@@ -13,11 +13,11 @@ export default class Preferences extends React.Component {
   render() {
     return (
         <div>
-        <ul>
+        <ol>
             <li><NavLink to="/preferences/cuisine">Cuisines</NavLink></li>
             <li><NavLink to="/preferences/pricerange">Prices</NavLink></li>
             <li><NavLink to="/preferences/distance">Distance</NavLink></li>
-        </ul>
+        </ol>
         {this.props.children}          
         </div>
     );
