@@ -24,7 +24,7 @@ export default class Header extends React.Component {
 
       if (this.props.loggedIn) {
           homeLink = ''
-          loginLink = <a href="#" onClick={this.logoff}>Logoff</a>
+          loginLink = <a style={{float: 'right'}} href="#" onClick={this.logoff}>Logoff</a>
           accountLink = <NavLink to={'/user/' + JSON.parse(sessionStorage.getItem('user')).userId}>My Account</NavLink>
           restaurantsLink = <span><NavLink to="/restaurants">Recommendations</NavLink> | </span>
           prefsLink = <NavLink to="/preferences">Preferences</NavLink>
@@ -35,7 +35,6 @@ export default class Header extends React.Component {
         {homeLink}
         {accountLink} |
         {loginLink}
-        {restaurantsLink ? ' | ' : ''}
         {restaurantsLink}
         {prefsLink}
       </div>
