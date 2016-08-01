@@ -1,7 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router'
 import Header from './Header.js'
-import RestaurantSearchWrapper from '../wrappers/RestaurantSearchWrapper.js'
+import Footer from './Footer.js'
 
 export default class Users extends React.Component {
   constructor(props) {
@@ -20,6 +19,7 @@ export default class Users extends React.Component {
           </div>
           <div>
           </div>
+          <Footer></Footer>
         </div>
 
       );

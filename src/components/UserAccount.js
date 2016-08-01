@@ -8,10 +8,12 @@ export default class UserAccount extends React.Component {
     super(props);
     let user = JSON.parse(sessionStorage.getItem('user'));
     this.state = {
-      user: user
+      user: user,
+      selectedRestaurant: ''
     };
     this.render = this.render.bind(this);
     this.navigateToPrefs = this.navigateToPrefs.bind(this);
+    this.pickRandomRestaurant = this.pickRandomRestaurant.bind(this);
   }
   render() {
       var preferencesText = ''
@@ -20,8 +22,10 @@ export default class UserAccount extends React.Component {
       }
     return (
         <div>
-            Welcome {this.state.user.name}! {preferencesText}
-            {this.props.children}
+            <h2>Welcome {this.state.user.name}!</h2> 
+            <div>{preferencesText}</div>
+            <div>Or if you are feeling lucky?<button onClick={this.pickRandomRestaurant}>Get to Lunch</button></div>
+            <div style={this.state.selectedRestaurant ? {display: 'block'} : {display: 'none'}}>You should get {this.state.selectedRestaurant}</div>   
         </div>
     );
   }
@@ -30,5 +34,13 @@ export default class UserAccount extends React.Component {
       e.preventDefault();
       this.state.user.preferencesSet = true;
       browserHistory.push('/preferences/cuisine') ;
+  }
+  pickRandomRestaurant(e) {
+      var restaurants = ['Qdoba', 'City Barbeque', 'Jason\'s Deli', 'Manaas', 'Schmitd\'s'],
+        selectedIndex = Math.floor(Math.random() * restaurants.length);
+        
+        this.setState({
+            selectedRestaurant: restaurants[selectedIndex]
+        });  
   }
 }
